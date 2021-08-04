@@ -26,5 +26,12 @@ Change resolution setting by -
 18. Then Install ROS2 packages -> sudo apt install ros-foxy-desktop
 19. - sudo apt install python3-pip
 20. - pip3 install -U argcomplete
-21. - 
-22. 
+
+................................................................
+To go to ROS installation folder
+- cd /opt/ros/foxy/
+- source setup.dash
+- ....you have to source to use ROS2 in the terminal .... if not .... cannot use ROS2
+- ....in one line -> source /opt/ros/foxy/setup.dash
+- .... so to source every time we open terminal -> gedit ~/.bashrc
+
