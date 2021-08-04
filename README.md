@@ -22,10 +22,27 @@ Change resolution setting by -
 14. ...... Extension - 1. C/C++ for Visual Studion Code 2. CMake for Visual Studio Code 
 15. Intall Ros2 Foxy
 16. ...... Search "ROS2 Foxy" at google -> choose https://docs.ros.org/en/foxy/Installation.html -> choose binary package by -> goto setup local and copy and paste the lines
-17. Then Setup Resources -> copy and pastes lines
-18. Then Install ROS2 packages -> sudo apt install ros-foxy-desktop
-19. - sudo apt install python3-pip
-20. - pip3 install -U argcomplete
+17. Copy and paste the followings
+locale  # check for UTF-8
+
+sudo apt update && sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+locale  # verify settings
+
+18. Then Setup Resources -> copy and pastes lines
+
+sudo apt update && sudo apt install curl gnupg2 lsb-release
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+19. Then update first -> sudo apt update
+20. Then Install ROS2 packages -> sudo apt install ros-foxy-desktop
+21. - sudo apt install python3-pip
+22. - pip3 install -U argcomplete
 
 ................................................................
 To go to ROS installation folder
