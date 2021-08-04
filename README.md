@@ -23,5 +23,8 @@ Change resolution setting by -
 15. Intall Ros2 Foxy
 16. ...... Search "ROS2 Foxy" at google -> choose https://docs.ros.org/en/foxy/Installation.html -> choose binary package by -> goto setup local and copy and paste the lines
 17. Then Setup Resources -> copy and pastes lines
-18. 
-19. 
+18. Then Install ROS2 packages -> sudo apt install ros-foxy-desktop
+19. - sudo apt install python3-pip
+20. - pip3 install -U argcomplete
+21. - 
+22. 
