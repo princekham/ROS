@@ -49,6 +49,6 @@ To go to ROS installation folder
 - cd /opt/ros/foxy/
 - source setup.dash
 - ....you have to source to use ROS2 in the terminal .... if not .... cannot use ROS2
-- ....in one line -> source /opt/ros/foxy/setup.dash
+- ....in one line -> source /opt/ros/foxy/setup.bash
 - .... so to source every time we open terminal -> gedit ~/.bashrc
 
