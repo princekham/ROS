@@ -105,6 +105,23 @@ To compile the package
 go to the package folder -> here ros2_ws
 colcon build or to choose one package to build -> colcon build --packages-select my_py_pkg
 
+.............
+To create a package in C++
+..........................
+go to src folder and ->
+ros2 pkg create --build-type ament_cmake my_cpp_pkg --dependencies rclcpp
+to build package ->colcon build --packages-select my_cpp_pkg
+
+................
+To create a node in Python
+..................
+go to src folder then the workspace
+
+I don't know why I cannot go directly there with one line of code -> I had to go folder by folder
+cd /ros2_ws/src/my_py_pkg/my_py_pkg/
+
+
+
 
 
 
