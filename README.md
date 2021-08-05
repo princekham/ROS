@@ -150,7 +150,30 @@ write this to setpu.py in the console_scripts
 "py_node = my_py_pkg.my_first_node:main"
 
 then go to the workspace and run -> colcon build --packages-select my_py_pkg
- 
+
+source .bashrc
+ros2 run my_py_pkg py_node
+
+Creating a class in node
+The new scripts will be
+
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
+
+class MyNode (Node):
+    def __init__(self):
+    super().__init__("py_test")
+    self.get_logger().info("Hello ROS2")
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = MyNode()
+    rclpy.spin(node)
+    rclpy.shutdown()
+
+if __name__== "__main__":
+    main()
 
 
 
