@@ -117,8 +117,42 @@ To create a node in Python
 ..................
 go to src folder then the workspace
 
-I don't know why I cannot go directly there with one line of code -> I had to go folder by folder
+I don't know why I cannot go directly there with one line of code
+-> I had to go folder by folder
+
 cd /ros2_ws/src/my_py_pkg/my_py_pkg/
+
+create a file -> touch my_first_node.py
+In the visual studio code, open the file and type
+
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = Node("py_test")
+    node.get_logger().info("Hello ROS2")
+    rclpy.spin(node)
+    rclpy.shutdown()
+
+if __name__== "__main__":
+    main()
+    
+Then make it exe by
+
+-> chmod +x my_first_node.py
+then -> run it -> ./my_first_node.py
+
+Then we will install the node
+write this to setpu.py in the console_scripts
+
+"py_node = my_py_pkg.my_first_node:main"
+
+then go to the workspace and run -> colcon build --packages-select my_py_pkg
+ 
+
+
 
 
 
