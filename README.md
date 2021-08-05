@@ -77,7 +77,33 @@ Go to your src directory -> cd ros2_ws/src/
 I am ok with the following line
 ->ros2 pkg create --build-type ament_python my_py_pkg --dependencies rclpy 
 
+.............Xml has the settings..............
 
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>my_py_pkg</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="tgi-lab@todo.todo">tgi-lab</maintainer>
+  <license>TODO: License declaration</license>
+
+  <depend>rclpy</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
+.......................................................
+To compile the package 
+.......................
+go to the package folder -> here ros2_ws
+colcon build or to choose one package to build -> colcon build --packages-select my_py_pkg
 
 
 
