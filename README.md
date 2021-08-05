@@ -1,4 +1,4 @@
-# ROS
+# ROS 
 image source - https://rosi-images.datasys.swri.edu/
 Tutorial link - 
 https://industrial-training-master.readthedocs.io/en/melodic/_source/prerequisites/Navigating-the-Ubuntu-GUI.html
@@ -51,4 +51,34 @@ To go to ROS installation folder
 - ....you have to source to use ROS2 in the terminal .... if not .... cannot use ROS2
 - ....in one line -> source /opt/ros/foxy/setup.bash
 - .... so to source every time we open terminal -> gedit ~/.bashrc
+- Then Reboot
+To Test ROS2
+- ros2 and enter twice at terminal
+- Run -> ros2 run demo_nodes_cpp talker
+- And in other terminal -> ros2 run demo_nodes_cpp listener
+
+
+...................................................................
+sudo apt install python3-colcon-common-extensions
+.... To use colcon, you have to source it with.....
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+put in the .bashrc file -> gedit ~/.bashrc
+
+................Creating Workspace...............can name it as you want.............
+mkdir ros2_ws
+cd ros2_ws/
+mkdir src
+colcon build
+source local_setup.bash 
+... in the gedit .bashrc.....
+................Now we will create a package in the src directory.......................
+Go to your src directory -> cd ros2_ws/src/
+-> ros2 pkg create my_py_pkg --built-tpye ament_python --dependencies rclpy
+I am ok with the following line
+->ros2 pkg create --build-type ament_python my_py_pkg --dependencies rclpy 
+
+
+
+
+
 
