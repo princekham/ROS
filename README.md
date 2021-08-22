@@ -54,25 +54,25 @@ To go to ROS installation folder
 - .... so to source every time we open terminal -> gedit ~/.bashrc
 - Then Reboot
 To Test ROS2
-- ros2 and enter twice at terminal
-- Run -> ros2 run demo_nodes_cpp talker
-- And in other terminal -> ros2 run demo_nodes_cpp listener
+- ros2 and enter twice at terminal <br>
+- Run -> ros2 run demo_nodes_cpp talker <br>
+- And in other terminal -> ros2 run demo_nodes_cpp listener <br>
 
 
-...................................................................
-sudo apt install python3-colcon-common-extensions
-.... To use colcon, you have to source it with.....
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
-put in the .bashrc file -> gedit ~/.bashrc
+...................................................................<br>
+sudo apt install python3-colcon-common-extensions <br>
+.... To use colcon, you have to source it with..... <br>
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash <br>
+put in the .bashrc file -> gedit ~/.bashrc<br>
 
-................Creating Workspace...............can name it as you want.............
-mkdir ros2_ws
-cd ros2_ws/
-mkdir src
-colcon build
-source local_setup.bash 
-... in the gedit .bashrc.....
-................Now we will create a package in the src directory.......................
+................Creating Workspace...............can name it as you want.............<br>
+mkdir ros2_ws <br>
+cd ros2_ws/ <br>
+mkdir src <br>
+colcon build <br>
+source local_setup.bash  <br>
+... in the gedit .bashrc..... <br>
+................Now we will create a package in the src directory.......................<br>
 Go to your src directory -> cd ros2_ws/src/
 -> ros2 pkg create my_py_pkg --built-tpye ament_python --dependencies rclpy
 I am ok with the following line
