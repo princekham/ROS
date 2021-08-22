@@ -21,8 +21,9 @@ Change resolution setting by - <br>
 13. Install Visual Studio Code by - sudo snap install --classic code
 14. ...... Extension - 1. C/C++ for Visual Studion Code 2. CMake for Visual Studio Code 
 15. Intall Ros2 Foxy
-16. ...... Search "ROS2 Foxy" at google -> choose https://docs.ros.org/en/foxy/Installation.html -> choose binary package by -> goto setup local and copy and paste the lines
-17. Copy and paste the followings
+16. ...... Search "ROS2 Foxy" at google -> choose https://docs.ros.org/en/foxy/Installation.html -> 
+17. choose binary package by -> goto Set locale and copy and paste the lines there
+18. Copy and paste the followings
 locale  # check for UTF-8
 
 sudo apt update && sudo apt install locales
