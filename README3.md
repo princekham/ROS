@@ -74,10 +74,11 @@ int main(int argc, char **argv)
     return 0;
 }
 ```
-and change CMakeList.txt file as follow <br>
-
-cmake_minimum_required(VERSION 3.5) <br>
-project(my_cpp_pkg) <br>
+and change CMakeList.txt file as follow to compile and install the package <br>
+some of the CMakeList.txt file are truncated <br>
+```
+cmake_minimum_required(VERSION 3.5) 
+project(my_cpp_pkg) 
 
 ##Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -92,24 +93,29 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 
-add_executable(cpp_node src/my_first_node.cpp)
-ament_target_dependencies(cpp_node rclcpp)
-
+add_executable(cpp_node src/my_first_node.cpp) // This is what added to the file
+ament_target_dependencies(cpp_node rclcpp) // This is what added to the file
+// Those are added too
 install (TARGETS
   cpp_node
   DESTINATION lib/${PROJECT_NAME}
   )
-
+// till here
 ament_package()
+```
+What is added to the file are commented <br>
+Those two lines will actually create executables<br>
 
-Then build it with 
-->colcon build --packages-select my_cpp_pkg
-at ros2_ws
+Then build it with <br>
+->colcon build --packages-select my_cpp_pkg <br>
+at ros2_ws <br>
+Run it with -> ./cpp_node <br>
+But now you don't always need to the base folder because you have installed it<br>
 
-ROS2 command line tool for it as follow:
+We can use ROS2 command line tool as follow: <br>
 
--> source .bashrc
-->ros2 run my_cpp_pkg cpp_node 
+-> source .bashrc <br>
+->ros2 run my_cpp_pkg cpp_node <br>
 
 - 
 
