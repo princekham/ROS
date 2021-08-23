@@ -92,15 +92,56 @@ then -> launch it by -> ./my_first_node.py <br>
 Then we will install the node to the workspace<br>
 
 write this to setup.py in the console_scripts <br>
+("setup.py" file is in the "my_py_pkg" folder) <br>
+Those in the "setup.py" file is identical to that in "package.xml"<br>
+
+```
+from setuptools import setup
+
+package_name = 'my_py_pkg'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=[package_name],
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='tgi-lab',
+    maintainer_email='tgi-lab@todo.todo',
+    description='TODO: Package description',
+    license='TODO: License declaration',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            "py_node = my_py_pkg.my_first_node:main"
+        ],
+    },
+)
+
+```
 
 "py_node = my_py_pkg.my_first_node:main" <br>
 
 then go to the workspace and run -> colcon build --packages-select my_py_pkg<br>
-
+To check where the node has been installed -> go to -> cd ros2_ws/install/my_py_pkg/lib/my_py_pkg <br>
+The installed package is there <br>
+To run it; from that dir -> ./py_node <br>
+We won't use those two methods to run a package<br>
+Instead, we will use ROS2 command line tool named "ros2 run"<br>
+Whenever you run a node always source it to bashrc as follow<br>
 source .bashrc
-ros2 run my_py_pkg py_node
+<H5>To run a package </H5>
+```ros2 run my_py_pkg py_node```
+meaning -> ros2 run followed by package name and node name <br>
+you can start from a new terminal <br>
 
-Creating a class in node
+
+<H4>Creating a class in node </H4>
 The new scripts will be
 
 #!/usr/bin/env python3
