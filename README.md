@@ -65,44 +65,5 @@ sudo apt install python3-colcon-common-extensions <br>
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash <br>
 put in the .bashrc file -> gedit ~/.bashrc<br>
 
-................Creating Workspace...............can name it as you want.............<br>
-mkdir ros2_ws <br>
-cd ros2_ws/ <br>
-mkdir src <br>
-colcon build <br>
-source local_setup.bash  <br>
-... in the gedit .bashrc..... <br>
-................Now we will create a package in the src directory.......................<br>
-Go to your src directory -> cd ros2_ws/src/ <br>
--> ros2 pkg create my_py_pkg --built-tpye ament_python --dependencies rclpy<br>
-I am ok with the following line<br>
-->ros2 pkg create --build-type ament_python my_py_pkg --dependencies rclpy <br>
-
-.............Xml has the settings..............<br>
-```
-<?xml version="1.0"?>
-<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
-<package format="3">
-  <name>my_py_pkg</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="tgi-lab@todo.todo">tgi-lab</maintainer>
-  <license>TODO: License declaration</license>
-  
-  
-
-  <depend>rclpy</depend>
-
-  <test_depend>ament_copyright</test_depend>
-  <test_depend>ament_flake8</test_depend>
-  <test_depend>ament_pep257</test_depend>
-  <test_depend>python3-pytest</test_depend>
-
-  <export>
-    <build_type>ament_python</build_type>
-  </export>
-</package>
-```
-.......................................................
 
 
