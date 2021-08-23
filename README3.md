@@ -25,9 +25,9 @@ if __name__== "__main__":<br>
 ````
 
 to compile is the same process as above <br>
-........................................ <br>
+
 <H5>Now let add a timer and a counter</H5>
-........................................ <br>
+
 ```
 #!/usr/bin/env python3
 import rclpy
@@ -56,9 +56,9 @@ if __name__== "__main__":
 
 to compile is the same process as above <br>
 
-.................................
+
 <H5>Add a node with C++</H5>
-...............................
+
 - Go to ros2_ws/src/my_cpp_pkg/src$  and create my_first_node.cpp <br>
 - edit it in visual studio code as below <br>
 ```
@@ -74,10 +74,10 @@ int main(int argc, char **argv)
     return 0;
 }
 ```
-and change CMakeList.txt file as follow
+and change CMakeList.txt file as follow <br>
 
-cmake_minimum_required(VERSION 3.5)
-project(my_cpp_pkg)
+cmake_minimum_required(VERSION 3.5) <br>
+project(my_cpp_pkg) <br>
 
 ##Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
