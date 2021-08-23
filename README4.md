@@ -29,3 +29,20 @@ use - h suffix for help <br>
 - To run a node without compiling again, use this when building a package (useful when debugging; only for python)
 - colcon build --packages-select my_py_pkg --symlink-install
 - but first the package needs to be an executable to use symlink
+
+<H4>29.rqt and rqt_graph</H4>
+
+- type rqt
+
+- type rqt at command line
+- a gui will show up
+- then open plugins ->introspection ->node graph
+<H4>30. Discover turtlesim</H4>
+
+- ros2 run turtle
+- to install turtlesim
+-  sudo apt install ros-foxy-turtlesim
+
+
+
+
