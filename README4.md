@@ -21,8 +21,11 @@ use - h suffix for help <br>
 <H4>27. Rename a node at runtime</H4>
 - $ ros2 run my_pypkg py_node --ros-args --remap __node:=abc (here  abc is a new name)
 
+<H4>Recaps</H4>
 
-
-
-
-
+- colcon build (will build all the packages inside the src folder)
+- or you can go to the workspace folder and build ->colcon build --packages-select my_py_pkg
+- source /usr/share/colcon_argcomplete/hook/concol-argcomplete.bash (in the .bashrc is for colcon autocompletion)
+- To run a node without compiling again, use this when building a package (useful when debugging; only for python)
+- colcon build --packages-select my_py_pkg --symlink-install
+- but first the package needs to be an executable to use symlink
