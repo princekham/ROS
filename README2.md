@@ -68,6 +68,7 @@ cd /ros2_ws/src/my_py_pkg/my_py_pkg/ <br>
 
 create a file -> touch my_first_node.py <br>
 In the visual studio code, open the file and type <br>
+Note that the name of the node here - "py_test" is not the name of the file <br>
 ```
 #!/usr/bin/env python3
 import rclpy
@@ -77,7 +78,7 @@ def main(args=None):
     rclpy.init(args=args)
     node = Node("py_test")
     node.get_logger().info("Hello ROS2")
-    rclpy.spin(node)
+    rclpy.spin(node) #to continue to be alive; press Ctrl+C to get out of the spin
     rclpy.shutdown()
 
 if __name__== "__main__":
@@ -86,14 +87,15 @@ if __name__== "__main__":
 Then make it exe by
 
 -> chmod +x my_first_node.py <br>
-then -> run it -> ./my_first_node.py <br>
+then -> launch it by -> ./my_first_node.py <br>
 
-Then we will install the node
-write this to setpu.py in the console_scripts
+Then we will install the node to the workspace<br>
 
-"py_node = my_py_pkg.my_first_node:main"
+write this to setup.py in the console_scripts <br>
 
-then go to the workspace and run -> colcon build --packages-select my_py_pkg
+"py_node = my_py_pkg.my_first_node:main" <br>
+
+then go to the workspace and run -> colcon build --packages-select my_py_pkg<br>
 
 source .bashrc
 ros2 run my_py_pkg py_node
