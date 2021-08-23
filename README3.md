@@ -1,42 +1,47 @@
 
 
-<H5>Creating a class in node </H5>
-The new scripts will be
+<H4>Creating a class in node </H4>
+The new scripts will be <br>
 
+```
+#!/usr/bin/env python3 <br>
+import rclpy <br>
+from rclpy.node import Node <br>
+
+class MyNode (Node): <br>
+    def __init__(self):<br>
+      super().__init__("py_test")<br>
+      self.get_logger().info("Hello ROS2")<br>
+
+def main(args=None):<br>
+    rclpy.init(args=args)<br>
+    node = MyNode()<br>
+    rclpy.spin(node)<br>
+    rclpy.shutdown()<br>
+
+if __name__== "__main__":<br>
+    main()<br>
+    
+````
+
+to compile is the same process as above <br>
+........................................ <br>
+<H5>Now let add a timer and a counter</H5>
+........................................ <br>
+```
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 
 class MyNode (Node):
-    def __init__(self):
-      super().__init__("py_test")
-      self.get_logger().info("Hello ROS2")
 
-def main(args=None):
-    rclpy.init(args=args)
-    node = MyNode()
-    rclpy.spin(node)
-    rclpy.shutdown()
-
-if __name__== "__main__":
-    main()
-
-........................................
-Now let add a timer and a counter
-........................................
-#!/usr/bin/env python3
-import rclpy
-from rclpy.node import Node
-
-class MyNode (Node):
-
-    def __init__(self):
+   def __init__(self):
         super().__init__("py_test")
         self.counter_=0
         self.get_logger().info("Hello ROS2")
         self.create_timer(0.5, self.timer_callback)
 
-    def timer_callback(self):
+   def timer_callback(self):
         self.counter_+=1
         self.get_logger().info("Hello" + str(self.counter_))
 def main(args=None):
@@ -47,13 +52,16 @@ def main(args=None):
 
 if __name__== "__main__":
     main()
+```
+
+to compile is the same process as above <br>
 
 .................................
-Add a node with C++
+<H5>Add a node with C++</H5>
 ...............................
-- Go to ros2_ws/src/my_cpp_pkg/src$  and create my_first_node.cpp
-- edit it in visual studio code as below
-
+- Go to ros2_ws/src/my_cpp_pkg/src$  and create my_first_node.cpp <br>
+- edit it in visual studio code as below <br>
+```
 #include "rclcpp/rclcpp.hpp"
 
 int main(int argc, char **argv)
@@ -65,13 +73,13 @@ int main(int argc, char **argv)
     rclcpp::shutdown();
     return 0;
 }
-
+```
 and change CMakeList.txt file as follow
 
 cmake_minimum_required(VERSION 3.5)
 project(my_cpp_pkg)
 
-# Default to C++14
+##Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
 endif()
@@ -80,7 +88,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
+##find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 
