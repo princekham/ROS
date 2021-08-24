@@ -61,7 +61,7 @@ To Test ROS2
 
 ...................................................................<br>
 sudo apt install python3-colcon-common-extensions <br>
-.... To use colcon, you have to source it with..... <br>
+.... To use colcon autocompletion, you have to source it with..... <br>
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash <br>
 put in the .bashrc file -> gedit ~/.bashrc<br>
 
