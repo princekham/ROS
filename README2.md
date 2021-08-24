@@ -7,6 +7,7 @@ cd ros2_ws/ <br>
 mkdir src <br>
 colcon build <br>
 source local_setup.bash (I omitted this later in the bashrc)  <br>
+instead I put "source ros2_ws/install/setup.bash" and it works <br>
 ... in the gedit .bashrc..... <br>
 <H4>To create a python package in the src directory</H4>
 .......................<br>
