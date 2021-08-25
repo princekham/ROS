@@ -39,7 +39,7 @@ int64 sum
 
 ```
 - add "add_two_ints_server=my_py_pkg.add_two_ints_server:main" to the setup.py in the console scripts as in
-
+```
 from setuptools import setup
 
 package_name = 'my_py_pkg'
