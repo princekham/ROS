@@ -48,13 +48,9 @@ if __name__ == "__main__":
 ```
 - Node name and the file name can be identical or different
 - And add a new line in the setup.py
-- "robot_news_station=my_py_pkg.robot_news_station"
+- "robot_news_station=my_py_pkg.robot_news_station:main"
 - where the first robot_news_station is the name of the executable
-- And the later is the name of the file followed by where to start : main
-- 
+- And the later is the name of the file followed by where to start : main 
 - don't forget to put   <depend>example_interfaces</depend> in the package.xml
 - I put it twice and it showed an error :D
 - compile it, source ~/.bashrc and run it
-
-
-
