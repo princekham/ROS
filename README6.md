@@ -55,7 +55,7 @@ if __name__ == "__main__":
 - I put it twice and it showed an error :D
 - compile it, source ~/.bashrc and run it
 
-<H4>36. Write a Python Publisher</H4>
+<H4>37. Write a Python Publisher</H4>
 
 - creat a file "smartphone.py"
 - make it executable
