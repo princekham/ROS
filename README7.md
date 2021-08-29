@@ -15,9 +15,19 @@
 - ros2 node list -> list the running nodes
 - ros2 node info /robot_news_station -> we will get publishers and everything created for this
 
-<H4>Remap a topic at runtime</H4>
+<H4>41.Remap a topic at runtime</H4>
 
 - To rename a topic -> ros2 run my_py_pkg robot_news_station --ros-arg -r __node:= my_station -r robot_news:=my_news
 - we can rename it and can still use the original node i think
 
+<H4>42.Monitor Topics with rqt and rqt graph</H4>
 
+- launch rqt graph by -> rqt_graph
+- try testing by changing node name
+- ros2 run my_py_pkg robot_news_station --4os-args -r __node:=mysation
+- rename the subsriber and run it too
+- ros2 run my_py_pkg smartphone --ros-arg -r __node:=smartphone2
+- try remapping with new topic too
+- ros2 run my_py_pkg robot_news_staton --ros-arg -r __node:=other_station -r robot_news=my_news
+- and create a subsriber to it
+- ros2 run my_py_pkg smartphone --ros-arg -r __node:=other_smart phone -r robot_news:=my_news
