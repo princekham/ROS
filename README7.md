@@ -14,6 +14,10 @@
 - - r 10 - is 10 hz
 - ros2 node list -> list the running nodes
 - ros2 node info /robot_news_station -> we will get publishers and everything created for this
-- 
+
+<H4>Remap a topic at runtime</H4>
+
+- To rename a topic -> ros2 run my_py_pkg robot_news_station --ros-arg -r __node:= my_station -r robot_news:=my_news
+- we can rename it and can still use the original node i think
 
 
