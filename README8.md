@@ -44,5 +44,11 @@ if __name__ == "__main__":
 ```
 - And go to ROS2_ws and build it -> colcon build --packages-select my_py_pkg 
 - And run it with ->ros2 run my_py_pkg add_two_ints_server
-- 
+- Without client, we can still test the server from the terminal
+- ros2 service list -list the services
+- ros2 node list - list the running nodes
+- ros2 node info /add_two_ints_server - shows the parameters
+- ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 3, b: 4}"
+
+<H5>51.Write a Python Service Client</H5>
  
