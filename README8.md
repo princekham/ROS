@@ -51,8 +51,10 @@ if __name__ == "__main__":
 - ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 3, b: 4}"
 
 <H5>51.Write a Python Service Client</H5>
-- Create a file - add_two_ints_client
-- we will go to ros2 workspace - cd ros2_ws/src/my_py_pkg/my_py_pkg_no_oop.py
+
+- we will go to ros2 workspace - cd ros2_ws/src/my_py_pkg/my_py_pkg
+- Create a file - touch add_two_ints_client_no_oop.py
+- And make it executable -> chmod +x add_two_ints_client_no_oop.py
 
 - The file is as follow
 ```
@@ -91,4 +93,5 @@ def main(args=None):
 if __name__ == "__main__":
     main()
 ```
- 
+ - Go to ros2_ws and compile it -> colcon build --packages-select my_py_pkg 
+ -
