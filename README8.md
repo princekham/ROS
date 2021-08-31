@@ -94,4 +94,4 @@ if __name__ == "__main__":
     main()
 ```
  - Go to ros2_ws and compile it -> colcon build --packages-select my_py_pkg 
- -
+ - And run it ->ros2 run my_py_pkg add_two_ints_client_no_oop
