@@ -53,7 +53,8 @@ string debug_message
 - Go to the CMakeLists add the followings
 ```
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/HarewareStatus.msg"
+  "msg/HardwareStatus.msg"
+  )
 ```
 - and compile
 - colcon build --packages-select my_robot_interfaces
