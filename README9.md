@@ -34,7 +34,7 @@ if(BUILD_TESTING)
   #set(ament_cmake_copyright_FOUND TRUE)
   # the following line skips cpplint (only works in a git repo)
   # uncomment the line when this package is not in a git repo
-  #set(ament_cmake_cpplint_FOUND TRUE)
+    #set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
 ```
@@ -58,3 +58,22 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 ```
 - and compile
 - colcon build --packages-select my_robot_interfaces
+- Let's see where the messge is installed
+- go to my_robot_interfaces folder first -> cd ros2_ws/install/my_robot_interfaces
+- Then go to -> cd lib/python3.8/site-packages/my_robot_interfaces/msg
+- and ls
+- And see what we got in hardware_status.py-> gedit _hardware_status.py
+- Go back to my_robot_interfaces folder -> cd ../../../../..
+- and go to msg folder -> cd include/my_robot_interfaces/msg/
+- and ls
+- check what's is inside the hardware_status.hpp -> gedit hardware_status.hpp
+- and check what's is inside the hardware_status_struct.hpp
+- To see a message definition
+- open a terminal ->source .bashrc -> ros2 interface show my_robot_inter (tab)
+- and it will show -> ros2 interface show my_robot_interfaces/msg/HardwareStatus
+- It will show message definition.
+- So to add new msg, you have to add message in msg folder and a new line to CMakeLists.txt
+- 
+- 
+
+
