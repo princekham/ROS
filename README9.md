@@ -73,7 +73,3 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 - and it will show -> ros2 interface show my_robot_interfaces/msg/HardwareStatus
 - It will show message definition.
 - So to add new msg, you have to add message in msg folder and a new line to CMakeLists.txt
-- 
-- 
-
-
