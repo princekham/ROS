@@ -42,7 +42,7 @@ endif()
 - Now your package is ready to build your messages
 - Let's create our first message in the msg folder
 - go to msg folder -> cd msg/
-- create a new file -> touch HardwareStatus.mas (must be Uppercase now underscore, no msg in the name)
+- create a new file -> touch HardwareStatus.msg (must be Uppercase now underscore, no msg in the name)
 - put the followings in the file
 ```
 int64 temperature
