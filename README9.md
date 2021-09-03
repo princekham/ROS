@@ -14,6 +14,31 @@
 - And in the CMakeLists.txt
 - find_package(rosidl_default_generators REQUIRED)
 - after find_package(ament_cmake REQUIRED)
+- And remove the following lines
+```
+# Default to C99
+if(NOT CMAKE_C_STANDARD)
+  set(CMAKE_C_STANDARD 99)
+endif()
+```
+- And the folowing
+```
+# uncomment the following section in order to fill in
+# further dependencies manually.
+# find_package(<dependency> REQUIRED)
+
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  # the following line skips the linter which checks for copyrights
+  # uncomment the line when a copyright and license is not present in all source files
+  #set(ament_cmake_copyright_FOUND TRUE)
+  # the following line skips cpplint (only works in a git repo)
+  # uncomment the line when this package is not in a git repo
+  #set(ament_cmake_cpplint_FOUND TRUE)
+  ament_lint_auto_find_test_dependencies()
+endif()
+```
+
 - Now your package is ready to build your messages
 - Let's create our first message in the msg folder
 - go to msg folder -> cd msg/
