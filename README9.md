@@ -101,3 +101,12 @@ def publish_hw_status(self):
     self.hw_status_publisher_.publish(msg)
 ```
 - And add this line to setup.py ->"hw_status_publisher= my_py_pkg.hw_status_publisher:main"
+- And we will build -> colcon build --packages-select my_py_pkg --symlink-install
+- And in another terminal - source .bashrc
+- ros2 run my_py_pkg hw_status_publisher
+- And in another terminal
+- ros2 topic list; ros2 node list;
+-  ros2 topic info /hardware_status
+-  ros2 topic echo /hardware_status (will give an error bec we didn't source this terminal here.
+-  surce .bashrc then it will work.
+-  
