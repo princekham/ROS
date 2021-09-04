@@ -73,3 +73,31 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 - and it will show -> ros2 interface show my_robot_interfaces/msg/HardwareStatus
 - It will show message definition.
 - So to add new msg, you have to add message in msg folder and a new line to CMakeLists.txt
+<H5>65. Use Your Custom Message in Python Node</H5>
+
+- First let's go to the python package we created
+- cd ros2_ws/src/my_py_pkg/my_py_pkg
+- We will create hardware status publisher file so that we can publish this topic on a message
+- touch hw_status_publisher.py
+- chmod +x hw_status_publisher.py
+- Edid the file - use the template ->name it HardwareStatusPublisherNode(Node) ; node = HardwareStatusPublisherNode()
+- And node name to -> hardware_status_publisher
+- And we will add a mesage type  -> from my_robot_interfaces import HardwareStatus
+- Go to settings and add one path-> "~/ros2_ws/install/my_robot_interfaces/lib/python3.8/site-packages/my_robot_interfaces"
+- and save the settings
+- and we need to add depency for that -> go to package.xml
+- and add -> <depend>my_robot_interfaes</depend>
+- and we will create a publisher (in hw_status_publisher.py)
+- self.hw_status_publisher_=self.create_publisher(HardwareStatus,"hardware_status",10)
+- And we will create a timer -> 
+```
+    self.timer_= self.create_timer(1.0, self.publisher_hw_stutus)
+    self.get_logger().info("Hardware status publisher has been started.")
+def publish_hw_status(self):
+    msg= HardwareStatus()
+    msg.termperatuer = 45
+    msg.are_mototrs_ready=True
+    msg.debug_message ="Nothing special"
+    self.hw_status_publisher_.publish(msg)
+```
+- 
