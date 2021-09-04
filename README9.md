@@ -100,4 +100,4 @@ def publish_hw_status(self):
     msg.debug_message ="Nothing special"
     self.hw_status_publisher_.publish(msg)
 ```
-- 
+- And add this line to setup.py ->"hw_status_publisher= my_py_pkg.hw_status_publisher:main"
