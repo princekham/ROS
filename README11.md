@@ -46,5 +46,32 @@
 - and with C++, see the tutorial
 - We will see how to use the parameter from within your code.
 
-<H5>Get Parameters from a Python Node</H5>
+<H5>47. Get Parameters from a Python Node</H5>
+
+- We will use number_publisher.py
+- self.declare_parameter("number to publish")
+- self.number= self.get_parameter("number_to_publish").value
+-  now run -> ros2 run my_py_pkg number_publisher --rors-args -p number_to_publish=4
+-  And in another terminal
+-  ros2 param get /number_publisher number_to_publish
+-  in another terminal
+-  ros2 topic echo /number
+-  kill the node and start with 5=> ros2 run my_py_pkg number_publisher --rors-args -p number_to_publish=4
+-  you will get 5 in another node.
+-  If you don't set the parameter, we will get an error.
+-  you can add default value -> self.declear_parameter("number_to_publish",2)
+-  here 2 is default value
+-  we can change the freq of publishing the number by
+-  declare another parameter ->self.declare_parameter("publish_frequency",1)
+-  we will create a new attribute
+-  self.publish_frequency_=self.get_parameter("publisher_frequency").value
+-  change the period format by
+-  -> self.number_timer = self.create_timer(1.0/self.publish_frequency_, self.publish_number)
+-  let's check by running
+-  ros2 run my_py_pkg number_publisher --ros-arg -p number_to_publish:=5
+-  and we can check the freq by (in a new terminal)-> cd ros2_ws -> ros2 topic hz /number_publisher
+-  And started again with 
+- -> -  ros2 run my_py_pkg number_publisher --ros-arg -p number_to_publish:=5 -p publish_frequency:=4.5
+- and check again with ros2 topic hz /number
+- 
 
