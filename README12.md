@@ -123,4 +123,4 @@ def generate_launch_description():
     ]
 ```
 - save it and lauch the launch file
-- rename a service also the same thing
+- rename a service also the same thing (see in the video)
