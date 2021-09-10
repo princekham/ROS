@@ -1,4 +1,5 @@
-<H5>Create and install a launch file</H5>
+<H5>8.5 Create and install a launch file</H5>
+
 - we will create a launch file to run two nodes
 - cd ros2_ws/src
 - ls ; and create a new package; will reduce no of dependency; _bringup is name used for launch file
@@ -78,9 +79,48 @@ def generate_launch_description():
   ```
   - we will add dependencies in package.xml
   - after <builtool_depend>amend_cmake........
-  ``
+  ```
   <exec_depend>my_py_pkg</exec_depend>
   <exec_depend>my_cpp_pkg</exec_depend>
   ```
   - now start the launch file again
   - ro2 launch my_robot_bringup number_app.launch.py
+<H5>85.Configure your Nodes in a launch file</H5>
+  
+  - how to  add parameters, how to rename a node, how to remap a topic in a launch file
+  - to rename a node -> open number_app.launch.py ->
+  - add a new argument under
+  ```
+  executable = "number_publisher",
+  
+  ```
+  - this
+  ```
+  name ="my_number_publisher"
+  ```
+  -And under
+  ```
+  executable="number_counter",
+  ```
+  - Add this
+  ```
+  name="my_number_counter"
+  ```
+- can launch the launch file again and the node has been renamed.
+  - How to remap a topic
+  - ros2 topic list (to see the topics)
+  - add this to the launch file also like we just did.
+  ```
+  remapping = [
+        ("number", "my_number")
+        ]
+  ```
+  - and
+```
+  remappings=[
+    ("number","my_number"),
+    ("number_count","my_number_count")
+    ]
+```
+- save it and lauch the launch file
+- rename a service also the same thing
